@@ -2,8 +2,11 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <title>{% block title %}Encephalon{% endblock %}</title>
+        <link rel="icon" href="/favicon.ico" sizes="32x32">
+        <link rel="icon" href="/icon.svg" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <link rel="manifest" href="/manifest.webmanifest">
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
@@ -14,5 +17,27 @@
     </head>
     <body>
         {% block body %}{% endblock %}
+
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 px-3 my-4 border-top">
+            <p class="col-md-4 mb-0 text-muted">
+                &copy; 2023 Encephalon
+                (icon:
+                <a href="https://commons.wikimedia.org/wiki/File:Human_Brain_Symbol.svg" target="_blank" rel="nofollow">Pendethan / Wikimedia Commons</a>,
+                license:
+                <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en" target="_blank" rel="nofollow">CC-BY-SA 3.0</a>)
+            </p>
+
+            <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                <img src="{{ asset('icon.svg') }}" style="width: 50px;" alt="Encephalon">
+            </a>
+
+            <ul class="nav col-md-4 justify-content-end">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+            </ul>
+        </footer>
     </body>
 </html>
